@@ -2,11 +2,12 @@
 pragma solidity ^0.8.19;
 
 contract ToDoListByName {
+    // Define a Task struct with a description
     struct Task {
         string description;
     }
 
-    // Store to-do lists based on a name string
+    // Map a user's name to their list of tasks
     mapping(string => Task[]) public nameToTasks;
 
     // Add a task to the user's to-do list by name
@@ -14,26 +15,8 @@ contract ToDoListByName {
         nameToTasks[_name].push(Task(_description));
     }
 
-    // View all tasks for a specific name
+    // View all tasks for a specific user by name
     function getTasks(string memory _name) public view returns (Task[] memory) {
         return nameToTasks[_name];
-    }
-
-    // Optional: update a task by index
-    function updateTask(
-        string memory _name,
-        uint256 _index,
-        string memory _newDescription
-    ) public {
-        require(_index < nameToTasks[_name].length, "Invalid index");
-        nameToTasks[_name][_index].description = _newDescription;
-    }
-
-    // Optional: delete a task
-    function deleteTask(string memory _name, uint256 _index) public {
-        require(_index < nameToTasks[_name].length, "Invalid index");
-        uint256 lastIndex = nameToTasks[_name].length - 1;
-        nameToTasks[_name][_index] = nameToTasks[_name][lastIndex];
-        nameToTasks[_name].pop();
     }
 }
