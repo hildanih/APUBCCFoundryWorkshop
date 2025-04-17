@@ -13,6 +13,7 @@ contract SimpleStorage {
         uint256 favoriteNumber;
         string name;
     }
+
     // uint256[] public anArray;
     Person[] public listOfPeople;
 
@@ -22,10 +23,12 @@ contract SimpleStorage {
         myFavoriteNumber = _favoriteNumber;
     }
 
+    //view, pure
     function retrieve() public view returns (uint256) {
         return myFavoriteNumber;
     }
 
+    //calldata, memory, storage
     function addPerson(string memory _name, uint256 _favoriteNumber) public {
         listOfPeople.push(Person(_favoriteNumber, _name));
         nameToFavoriteNumber[_name] = _favoriteNumber;
