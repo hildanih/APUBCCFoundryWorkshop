@@ -27,11 +27,6 @@ contract FundMe {
         funders.push(msg.sender);
     }
 
-    function getVersion() public view returns (uint256) {
-        AggregatorV3Interface priceFeed = AggregatorV3Interface(0x694AA1769357215DE4FAC081bf1f309aDC325306);
-        return priceFeed.version();
-    }
-
     modifier onlyOwner() {
         // require(msg.sender == owner);
         if (msg.sender != i_owner) revert NotOwner();
