@@ -14,4 +14,8 @@ AI Tool
 - Google Gemini
 - Phind.com
 
-EP3 FundMe & Foundry Download
+EP3 FundMe
+- FundMe.sol
+- PriceConverter.sol
+
+EP3 Foundry Download
