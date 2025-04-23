@@ -15,7 +15,7 @@ AI Tool
 - Phind.com
 
 EP3 FundMe
-- FundMe.sol
-- PriceConverter.sol
-
-EP3 Foundry Download
+- FundMe.sol (what we coded together)
+- PriceConverter.sol (what we coded together)
+- FundMeSample.sol (reference code)
+- PriceConverterSample.sol (reference code)
